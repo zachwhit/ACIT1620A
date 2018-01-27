@@ -55,6 +55,43 @@
             .thumbnails:hover {
                 opacity:1;
             }
+            
+            #info {
+                opacity: 0;
+                position:absolute;
+                right: 0px;
+                top: 0px;
+                bottom: 0px;
+                margin: auto;
+                height: 50vh;
+                width: 60vw;
+                background-color: #FAD;
+                transition: opacity 1s;
+            }
+            
+            #infoimg {
+                width:100%;
+                height:80%;
+            }
+            
+            #infotext {
+                width:100%;
+                height:20%;
+                padding:10px;
+            }
+            
+            #close {
+                position: absolute;
+                width:25px;
+                height:25px;
+                background-color: red;
+                color:#FFF;
+                left: 2px;
+                top: 2px;
+                padding: 1px;
+                cursor: pointer;
+                text-align: center;
+            }
         </style>
     </head>
     
@@ -63,6 +100,7 @@
         <video id="myBG" autoplay loop muted>
             <source src="imgs/spidey_trailer.mp4" />
         </video>
+        
         <div id="controls">
             <div id="img1" class="thumbnails"></div>
             <div id="img2" class="thumbnails"></div> 
@@ -70,6 +108,50 @@
             <div id="img4" class="thumbnails"></div> 
         </div>
         
-    </body>
-    
+        <div id="info">
+            <div id="infoimg"></div>
+            <div id="infotext"></div>
+            <div id="close">x</div>
+        </div>
+        
+        <script>
+            document.getElementById("img1").addEventListener("click", function(){
+                document.getElementById("infoimg").style.backgroundImage = "url(imgs/image1.png)";
+                document.getElementById("infoimg").style.backgroundSize = "cover";
+                document.getElementById("infoimg").style.backgroundPosition = "center center";
+                document.getElementById("info").style.opacity = 1;
+                document.getElementById("infotext").innerHTML = "That friendly neighborhood guy."
+            });
+            
+            document.getElementById("img2").addEventListener("click", function(){
+                document.getElementById("infoimg").style.backgroundImage = "url(imgs/image2.jpg)";
+                document.getElementById("infoimg").style.backgroundSize = "cover";
+                document.getElementById("infoimg").style.backgroundPosition = "center center";
+                document.getElementById("info").style.opacity = 1;
+                document.getElementById("infotext").innerHTML = "Angry green guy."
+            });
+            
+            document.getElementById("img3").addEventListener("click", function(){
+                document.getElementById("infoimg").style.backgroundImage = "url(imgs/image3.jpg)";
+                document.getElementById("infoimg").style.backgroundSize = "cover";
+                document.getElementById("infoimg").style.backgroundPosition = "center center";
+                document.getElementById("info").style.opacity = 1;
+                document.getElementById("infotext").innerHTML = "Spiderman's evil brother."
+            });
+            
+            document.getElementById("img4").addEventListener("click", function(){
+                document.getElementById("infoimg").style.backgroundImage = "url(imgs/image4.jpg)";
+                document.getElementById("infoimg").style.backgroundSize = "cover";
+                document.getElementById("infoimg").style.backgroundPosition = "center center";
+                document.getElementById("info").style.opacity = 1;
+                document.getElementById("infotext").innerHTML = "Angry green guy with a purple hat."
+            });
+            
+            document.getElementById("close").addEventListener("click", function() {
+                document.getElementById("info").style.opacity = 0;
+            });
+            
+            
+        </script>
+    </body>  
 </html>
