@@ -1,76 +1,49 @@
-var disp = document.getElementById("display");
-var bgInp = document.getElementById("bgText");
-var menu = document.getElementById("menu");
+var bg1 = document.getElementById("bg1");
+var bg2 = document.getElementById("bg2");
+var bg3 = document.getElementById("bg3");
+var bg4 = document.getElementById("bg4");
+var main = document.getElementById("main");
 
-var ir = document.getElementById("red");
-var ig = document.getElementById("green");
-var ib = document.getElementById("blue");
+var cloth1 = document.getElementById("cloth1");
+var cloth2 = document.getElementById("cloth2");
+var cloth3 = document.getElementById("cloth3");
 
-var rr = document.getElementById("rred");
-var rg = document.getElementById("rgreen");
-var rb = document.getElementById("rblue");
+var title = document.getElementById("title");
 
-var colorInp = document.getElementById("colorInp");
-
-var curElement = disp;
-
-menu.addEventListener("click", function(){
-    //console.log(curElement);
-    curElement = menu;
-    //console.log(curElement);
+bg1.addEventListener("click", function(){
+    main.style.display = "block";
+    cloth1.src = "imgs/gears/h1.png";
+    cloth2.src = "imgs/gears/h2.png";
+    cloth3.src = "imgs/gears/h3.png";
+    title.innerHTML = "Head Gear";
 });
 
-disp.addEventListener("click", function(){
-    curElement = disp;
-});
-
-bgInp.addEventListener("click", function(){
-    curElement = bgInp;
-});
-
-document.getElementById("change").addEventListener("click", function(){
-    console.log(bgInp.value);
+bg2.addEventListener("click", function(){
+    main.style.display = "block";
+    cloth1.src = "imgs/gears/b1.png";
+    cloth2.src = "imgs/gears/b2.png";
+    cloth3.src = "imgs/gears/b3.png";
+    title.innerHTML = "Body Gear";
     
-    curElement.style.backgroundColor = bgInp.value;
-    bgInp.value = "";
 });
 
-ir.addEventListener("change", function(){
-    curElement.style.backgroundColor = "rgb("+ir.value+", "+ig.value+", "+ib.value+")";
-    rr.value = ir.value;
+bg3.addEventListener("click", function(){
+    main.style.display = "block";
+    cloth1.src = "imgs/gears/l1.png";
+    cloth2.src = "imgs/gears/l2.png";
+    cloth3.src = "imgs/gears/l3.png";
+    title.innerHTML = "Leg Gear";
 });
 
-ig.addEventListener("change", function(){
-    curElement.style.backgroundColor = "rgb("+ir.value+", "+ig.value+", "+ib.value+")";
-    rg.value = ig.value;
+bg4.addEventListener("click", function(){
+    main.style.display = "block";
+    cloth1.src = "imgs/gears/f1.png";
+    cloth2.src = "imgs/gears/f2.png";
+    cloth3.src = "imgs/gears/f3.png";
+    title.innerHTML = "Foot Gear";
 });
 
-ib.addEventListener("change", function(){
-    curElement.style.backgroundColor = "rgb("+ir.value+", "+ig.value+", "+ib.value+")";
-    rb.value = ib.value;
+main.addEventListener("click", function() {
+    main.style.display = "none";
 });
-
-rr.addEventListener("change", function(){
-    curElement.style.backgroundColor = "rgb("+rr.value+", "+rg.value+", "+rb.value+")";
-    ir.value = rr.value;
-});
-
-rg.addEventListener("change", function(){
-    curElement.style.backgroundColor = "rgb("+rr.value+", "+rg.value+", "+rb.value+")";
-    ig.value = rg.value;
-});
-
-rb.addEventListener("change", function(){
-    curElement.style.backgroundColor = "rgb("+rr.value+", "+rg.value+", "+rb.value+")";
-    ib.value = rb.value;
-});
-
-colorInp.addEventListener("change", function(){
-    curElement.style.backgroundColor = colorInp.value;
-});
-
-
-
-
-
 
